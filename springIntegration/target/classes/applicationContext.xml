@@ -45,11 +45,6 @@
 		<property name="queue" value="llamadasRabbitQueue" />
 	</bean>
 
-	<!-- Spring AMQP Admin -->
-	<bean id="admin" class="org.springframework.amqp.rabbit.core.RabbitAdmin">
-		<constructor-arg ref="rabbitConnFactory" />
-	</bean>
-
-	<int-amqp:outbound-channel-adapter id="rabbitMqChannel" amqp-template="template"/>
+	<int-amqp:outbound-channel-adapter id="rabbitMqChannel" amqp-template="template" default-delivery-mode="PERSISTENT"/>
 
 </beans>

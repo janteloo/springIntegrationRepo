@@ -14,6 +14,7 @@ public class LlamadasDelivery {
 	public Float delivery(Float precioFinal) {
 		logger.info("Precio final de todas las llamadas: " + precioFinal);
 		logger.info("La respuesta se envía a través de un channel adapter");
+		
 		return precioFinal;
 	}
 }

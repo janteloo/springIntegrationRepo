@@ -38,11 +38,6 @@
 		<property name="port" value="5672" />
 	</bean>
 
-	<!-- Spring AMQP Admin -->
-	<bean id="admin" class="org.springframework.amqp.rabbit.core.RabbitAdmin">
-		<constructor-arg ref="rabbitConnFactory" />
-	</bean>
-
 	<int-amqp:channel id="rabbitMqChannel"
 		connection-factory="rabbitConnFactory" message-driven="true"
 		queue-name="llamadasRabbitQueue" />
