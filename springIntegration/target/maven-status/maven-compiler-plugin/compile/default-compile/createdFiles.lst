@@ -1,0 +1,14 @@
+org\cpap\obligatorio\springIntegration\dominio\Llamada.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasDiscarded.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasFilter.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasProcessor.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasDelivery.class
+org\cpap\obligatorio\springIntegration\aplicacion\EjecutarAplicacion.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasGateway.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasAggregator.class
+org\cpap\obligatorio\springIntegration\dominio\CompaniaEnum.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasSplitter.class
+org\cpap\obligatorio\springIntegration\dominio\Llamadas.class
+org\cpap\obligatorio\springIntegration\aplicacion\datos\GeneradorDatos.class
+org\cpap\obligatorio\springIntegration\componentes\LlamadasRouter.class
+org\cpap\obligatorio\springIntegration\componentes\AMQPTest.class
