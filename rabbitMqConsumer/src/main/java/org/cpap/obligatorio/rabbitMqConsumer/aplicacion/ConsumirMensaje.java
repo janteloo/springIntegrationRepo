@@ -1,6 +1,6 @@
 package org.cpap.obligatorio.rabbitMqConsumer.aplicacion;
 
-import org.cpap.obligatorio.rabbitMqConsumer.componentes.RabbitMqConsumer;
+import org.cpap.obligatorio.rabbitMqConsumer.componentes.LlamadasGateway;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,8 +10,8 @@ public class ConsumirMensaje {
 
 	public static void main(String[] args) {
 		context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		RabbitMqConsumer consumer = (RabbitMqConsumer) context.getBean("rabbitMqConsumer");
-		consumer.obtenerPrecioFinal();
+		LlamadasGateway gateway = (LlamadasGateway) context.getBean("llamadasGateway");
+		gateway.procesar();
 	}
 }
  

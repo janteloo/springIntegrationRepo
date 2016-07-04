@@ -1,26 +1,18 @@
 package org.cpap.obligatorio.rabbitMqConsumer.componentes;
 
 import org.apache.log4j.Logger;
-import org.springframework.amqp.core.AmqpAdmin;
-import org.springframework.amqp.core.AmqpTemplate;
-import org.springframework.amqp.core.Queue;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.integration.annotation.MessageEndpoint;
+import org.springframework.integration.annotation.ServiceActivator;
+import org.springframework.messaging.Message;
 
-@Component
+@MessageEndpoint
 public class RabbitMqConsumer {
 
-	@Autowired
-	private AmqpAdmin admin;
-	@Autowired
-	private AmqpTemplate template;
+	private Logger logger = Logger.getLogger(RabbitMqConsumer.class);
 
-	private static final Logger logger = Logger.getLogger(RabbitMqConsumer.class);
-
-	public void obtenerPrecioFinal() {
-		admin.declareQueue(new Queue("llamadasRabbitQueue"));
-		Float precioFinal = (Float) template.receiveAndConvert();
-		logger.info("Precio final de todas las llamadas, obtenido remotamente: " + precioFinal);		
+	@ServiceActivator(inputChannel="rabbitMqChannel")
+	public void obtenerPrecioFinal(Message<?> message) {
+		logger.info("Resultado final: " + message.getPayload());
 	}
 
 }
