@@ -11,11 +11,9 @@ public class EjecutarAplicacion {
 	private static ApplicationContext context;
 
 	public static void main(String[] args) {
-
 		Llamadas llamadas = GeneradorDatos.generarLlamadas();
 		context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	
-		
 		LlamadasGateway gateway = (LlamadasGateway) context.getBean("llamadasGateway");
 		gateway.procesar(llamadas);
 	}
